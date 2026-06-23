@@ -1,0 +1,20 @@
+{
+    "sqltools.connections": [
+        {
+            "ssh": "Disabled",
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "api_server_db",
+            "database": "api_server_db",
+            "username": "api_server_db_user",
+            "password": "api_server_db_password"
+        }
+    ],
+    "dart.lineLength": 120,
+    "editor.rulers": [
+        80,
+        120
+    ]
+}
