@@ -4,7 +4,7 @@ import 'package:shelf/shelf.dart';
 
 class SignInRoute {
   Future<Response> handler(Request req) async {
-    final jwt = JWT({'userId': '12345', 'role': 'admin'}, issuer: 'https://yourdomain.com');
+    final jwt = JWT({'userId': '12345', 'role': 'admin'}, issuer: 'http://localhost');
 
     final token = jwt.sign(SecretKey(Env().jwtSecret), expiresIn: Duration(minutes: Env().jwtRefreshExpiresMinuts));
 

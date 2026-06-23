@@ -1,3 +1,4 @@
+###
 POST http://localhost:8080/signup HTTP/1.1
 content-type: application/json
 
@@ -7,16 +8,25 @@ content-type: application/json
 }
 
 ###
-
 GET http://localhost:8080/signin HTTP/1.1
-content-type: application/json
 
+content-type: application/json
 {
     "username": "sample",
     "password": "asdfasdinfaiosdnfoas"
 }
 
 ###
+POST http://localhost:8080/api/signout HTTP/1.1
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIxMjM0NSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc4MjI1MjM0MiwiZXhwIjoxNzgyMjU5NTQyLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0In0.HIunixJNsucFv_FvlCUASGZWPVyJpQ-_b9VehW2HgZo
 
+###
 GET http://localhost:8080/api/dashboard HTTP/1.1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIxMjM0NSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc4MjI1MDg4NCwiZXhwIjoxNzgyMjU4MDg0LCJpc3MiOiJodHRwOi8vbG9jYWxob3N0In0.hYTKmk2A_dabLfZygkU38ZPbfjocISTX44_kqsg_HlM
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIxMjM0NSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc4MjI1MjM0MiwiZXhwIjoxNzgyMjU5NTQyLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0In0.HIunixJNsucFv_FvlCUASGZWPVyJpQ-_b9VehW2HgZo
+
+###
+GET http://localhost:8080/api/profile HTTP/1.1
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIxMjM0NSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc4MjI1MjM0MiwiZXhwIjoxNzgyMjU5NTQyLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0In0.HIunixJNsucFv_FvlCUASGZWPVyJpQ-_b9VehW2HgZo
