@@ -1,10 +1,11 @@
-import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:dotenv/dotenv.dart';
+
+final dotEnv = DotEnv(includePlatformEnvironment: true);
 
 class Env {
-  final String serverPort = dotenv.get('SERVER_PORT', fallback: '8080');
-  final String jwtSecret = dotenv.get('JWT_SECRET', fallback: 'no_jwt_secret_loaded');
-  final int jwtSessionExpiresMinuts = dotenv.getInt('JWT_SESSION_EXPIRY_MINUTS', fallback: 15);
-  final int jwtRefreshExpiresMinuts = dotenv.getInt('JWT_SESSION_EXPIRY_MINUTS', fallback: 120);
-
-  final String dbHost = dotenv.get('DB_HOST', fallback: 'localhost');
+  String get serverPort => dotEnv['SERVER_PORT'] ?? '8080';
+  String get jwtSecret => dotEnv['JWT_SECRET'] ?? 'no_jwt_secret_loaded';
+  int get jwtSessionExpiresMinuts => int.tryParse(dotEnv['JWT_SESSION_EXPIRY_MINUTS'] ?? '15') ?? 15;
+  int get jwtRefreshExpiresMinuts => int.tryParse(dotEnv['JWT_SESSION_EXPIRY_MINUTS'] ?? '120') ?? 120;
+  String get dbHost => dotEnv['DB_HOST'] ?? 'localhost';
 }
