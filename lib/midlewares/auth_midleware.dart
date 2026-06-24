@@ -1,5 +1,5 @@
 import 'package:api_server/config/env.dart';
-import 'package:api_server/config/token_denylist.dart'; // <-- Import the denylist
+import 'package:api_server/config/token_denylist.dart';
 import 'package:dart_jsonwebtoken/dart_jsonwebtoken.dart';
 import 'package:shelf/shelf.dart';
 
@@ -14,7 +14,6 @@ class AuthMidleware {
 
         final tokenString = authHeader.substring(7);
 
-        // --- NEW: Check if the token was signed out (denylisted) ---
         if (TokenDenylist.contains(tokenString)) {
           return Response(401, body: 'Token has been revoked (Signed Out)');
         }

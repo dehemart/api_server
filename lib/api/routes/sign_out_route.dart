@@ -9,7 +9,6 @@ class SignOutRoute {
     if (authHeader != null && authHeader.startsWith('Bearer ')) {
       final token = authHeader.substring(7);
 
-      // Add the token to our denylist so it can no longer be used
       TokenDenylist.add(token);
     }
 

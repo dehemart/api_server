@@ -1,5 +1,4 @@
 class TokenDenylist {
-  // A simple in-memory set to store revoked tokens.
   static final Set<String> _revokedTokens = {};
 
   static void add(String token) {
